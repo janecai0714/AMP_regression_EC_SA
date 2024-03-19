@@ -1,6 +1,4 @@
-# Project Title
-
-A BERT-based Transfer Learning Approach for Predicting the Minimum Inhibitory Concentrations of Antimicrobial Peptides for Escherichia coli and Staphylococcus aureus
+# A BERT-based Transfer Learning Approach for Predicting the Minimum Inhibitory Concentrations of Antimicrobial Peptides for Escherichia coli and Staphylococcus aureus
 
 ## Description
 
