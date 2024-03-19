@@ -24,7 +24,7 @@ deep learning model based on the fine-tuned Bidirectional Encoder Representation
 * run EC/ml_base/ml_train_test.py to build traditional machine learning models
 
 ### Predict sequences (receive a fasta file and output a csv file)
-* change the variables (fasta_path, csv_path) to your own filename, run predict/predict.py to predict pMIC values for input sequences
+* in predict.py, change the variables (fasta_path, csv_path) to your own filename, run predict/predict.py to predict pMIC values for input sequences
 ## Acknowledgments
 
 Inspiration, code snippets, etc.
