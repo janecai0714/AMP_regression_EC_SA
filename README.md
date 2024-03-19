@@ -1,26 +1,30 @@
 # Project Title
 
-A BERT-based Transfer Learning Approach for Predicting the Minimum Inhibitory Concentrations of Antimicrobial Peptides for \textit{Escherichia coli} and \textit{Staphylococcus aureus}
+A BERT-based Transfer Learning Approach for Predicting the Minimum Inhibitory Concentrations of Antimicrobial Peptides for Escherichia coli and Staphylococcus aureus
 
 ## Description
 
-Air pollution in Macau has become a serious problem following the Pear River Delta's (PRD) rapid industrializatio nthat begain in the 1990s. 
-Two regions in Macau were selected to do this the air quality forecast project: Macao roadside and Macao residential. 
-For Macao roadside, there were four pollutants (CO, NO2, PM10, PM25) have availabel data.
-As for Macao residential, there were six pollutants (CO, NO2, O3, PM10, PM25, SO2) have availabel data. 
-For each pollutants in these regions, two machine learning model groups: tradtional machine models (random forest, support vector machine) and deep learning models (artificial neural networks, recurrent neural network, long short-term memory network, gated recurrent units network), were applied to create predictive models to forecast pollutant concentrations for the next 24 h given the previous 3 days data. 
+Antimicrobial peptides (AMPs) are a promising alternative for combating bacterial drug resistance. While current computer prediction models excel in binary classification of AMPs from sequences, 
+there is a lack of regression methods to accurately quantify AMP activity against specific bacteria, making the identification of highly potent AMPs a challenge. In this study, we proposed a 
+deep learning model based on the fine-tuned Bidirectional Encoder Representations from Transformers (BERT) architecture to extract embedding features from input sequences and predict minimum inhibitory concentrations (MICs) for target bacterial species. Using the transfer learning strategy, we built re gression models for Escherichia coli (EC) and Staphylococcus aureus (SA) using data curated from DBAASP.
 
 ## Getting Started
 
 ### Python packages
 
-* tensorflow 2.6.2
+* torch==2.0.1+cu118
+* biopython==1.81
+* transformers==4.28.1
+* tokenizers==0.13.3
 
-### Executing program
+### Executing program (take EC as an example)
 
-* run model/tradtional_model.py to build traditional models.
-* run model/dl_model.py to build deep learning models.
+* run EC/bert_finetuen/train_test.py to build the regression model
+* run EC/bert_finetune/reproduce.py to reproduce experimental results
+* run EC/ml_base/ml_train_test.py to build traditional machine learning models
 
+### Predict sequences (receive a fasta file and output a csv file)
+* change the variables (fasta_path, csv_path) to your own filename, run predict/predict.py to predict pMIC values for input sequences
 ## Acknowledgments
 
 Inspiration, code snippets, etc.
