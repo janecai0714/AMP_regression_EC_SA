@@ -19,13 +19,13 @@ deep learning model based on the fine-tuned Bidirectional Encoder Representation
 
 ### Executing program (take EC as an example)
 
-* run EC/bert_finetuen/train_test.py to build the regression model
-* run EC/bert_finetune/reproduce.py to reproduce experimental results
-* run EC/ml_base/ml_train_test.py to build traditional machine learning models
+* run /EC/bert_finetuen/train_test.py to build the regression model
+* run /EC/bert_finetune/reproduce.py to reproduce experimental results
+* run /EC/ml_base/ml_train_test.py to build traditional machine learning models
 
 ### Predict sequences (receive a fasta file and output a csv file)
-* in predict.py, change the variables (fasta_path, csv_path) to your own filename, run predict/predict.py to predict pMIC values for input sequences
+* in the /predict/predict.py, change the variables (fasta_path, csv_path) to your own filename, run /predict/predict.py to predict pMIC values for input sequences
 ## Acknowledgments
 
 Inspiration, code snippets, etc.
-* Lei, Thomas MT, Stanley CW Ng, and Shirley WI Siu. "Application of ANN, XGBoost, and other ml methods to forecast air quality in Macau." Sustainability 15, no. 6 (2023): 5341.
+* Elnaggar, Ahmed, Michael Heinzinger, Christian Dallago, Ghalia Rehawi, Yu Wang, Llion Jones, Tom Gibbs et al. "Prottrans: Toward understanding the language of life through self-supervised learning." IEEE transactions on pattern analysis and machine intelligence 44, no. 10 (2021): 7112-7127.
