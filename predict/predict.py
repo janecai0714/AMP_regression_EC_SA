@@ -1,20 +1,11 @@
-from transformers import BertTokenizer, BertModel
 from model_def import REG
-import torch
-from torch.utils.data import Dataset, DataLoader
-import pandas as pd
-import numpy as np
-import torch.optim as optim
-from sklearn.metrics import mean_squared_error, r2_score
-from torch import nn
-from scipy.stats import pearsonr, kendalltau
-import argparse
 from seq_dataloader import *
 from seq_dataloader import _get_train_data_loader, _get_test_data_loader, freeze
-import matplotlib.pyplot as plt
-import math
-from Bio.SeqUtils.ProtParam import ProteinAnalysis
 import collections
+from onedrivedownloader import download
+import os
+import warnings
+warnings.filterwarnings('ignore')
 
 def read_fasta_file(fasta_path, csv_path):
     f = open(fasta_path, "r")
@@ -54,11 +45,17 @@ def predict(ec_model, sa_model, fasta_path, csv_path):
 
 if __name__ == "__main__":
     device = "cuda" if torch.cuda.is_available() else "cpu"
+    ec_url = "https://ipmedumo-my.sharepoint.com/:u:/g/personal/p2214906_mpu_edu_mo/EQNDcFHVJ9VAll_hT1hvrYkBcTV_WHX8nrBphv_xf_-FXw?e=Dgc9PB"
     ec_model_path = "ec_prot_bert_finetune_reproduce.pkl"
+    if not os.path.exists(ec_model_path):
+        download(ec_url, ec_model_path)
     ec_model = REG()
     ec_model.load_state_dict(torch.load(ec_model_path))
 
+    sa_url ="https://ipmedumo-my.sharepoint.com/:u:/g/personal/p2214906_mpu_edu_mo/EUS21YkRlMBGuGJuaxAFqt0BFDcItYnD9RmvUlGL3LkhGA?e=FD2UUK"
     sa_model_path = "sa_prot_bert_finetune_reproduce.pkl"
+    if not os.path.exists(sa_model_path):
+        download(sa_url, sa_model_path)
     sa_model = REG()
     sa_model.load_state_dict(torch.load(sa_model_path))
 
