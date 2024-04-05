@@ -39,8 +39,8 @@ def predict(ec_model, sa_model, fasta_path, csv_path):
             sa_predict_list.extend(sa_predict_pMIC.data.numpy())
     ec_predict_list = [item for sublist in ec_predict_list for item in sublist]
     sa_predict_list = [item for sublist in sa_predict_list for item in sublist]
-    seq["ec_predicted_MIC"] = [10**(-item) for item in ec_predict_list]
-    seq["sa_predicted_MIC"] = [10**(-item) for item in sa_predict_list]
+    seq["ec_predicted_MIC_μM"] = [10**(-item) for item in ec_predict_list]
+    seq["sa_predicted_MIC_μM"] = [10**(-item) for item in sa_predict_list]
     seq = seq.drop(columns = ["SEQUENCE_space"])
     seq.to_csv(csv_path, index=False)
 
