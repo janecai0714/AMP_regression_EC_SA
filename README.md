@@ -9,8 +9,8 @@ deep learning model based on the fine-tuned Bidirectional Encoder Representation
 ### Dataset
 data is curated from DBAASP, it includes sequences only with 5-60 AA in length. The activity values of the peptides were converted to pMIC (-log MIC), where the unit of MIC is µM. This dataset was used to construct regression models for Escherichia coli and Staphylococcus aureus.
 * Dataset for Escherichia coli has a median MIC value of 13.49 µM (corresponding to a pMIC of −1.13): 4042 sequences. （/data/EC.csv)
-** Train dataset for Escherichia coli: 3638 sequences. (/data/train-EC.csv)
-** Test dataset for Escherichia coli: 404 sequences. (/data/test-EC.csv)
+  Train dataset for Escherichia coli: 3638 sequences. (/data/train-EC.csv)
+  Test dataset for Escherichia coli: 404 sequences. (/data/test-EC.csv)
 
 * Dataset for Staphylococcus aureus has a median MIC value of 16.22 µM (corresponding to a pMIC of −1.21): 3275 sequences. (/data/SA.csv)
 ** Train dataset for Staphylococcus aureus: 2947 sequences. (/data/train-SA.csv)
