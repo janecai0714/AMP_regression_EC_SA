@@ -7,7 +7,7 @@ there is a lack of regression methods to accurately quantify AMP activity agains
 deep learning model based on the fine-tuned Bidirectional Encoder Representations from Transformers (BERT) architecture to extract embedding features from input sequences and predict minimum inhibitory concentrations (MICs) for target bacterial species. Using the transfer learning strategy, we built re gression models for Escherichia coli (EC) and Staphylococcus aureus (SA) using data curated from DBAASP.
 
 ### Dataset
-data is curated from DBAASP, it includes sequences only with 5-60 AA in length. The activity values of the peptides were converted to pMIC (-log MIC), where the unit of MIC is µM. This dataset was used to construct regression models for Escherichia coli and Staphylococcus aureus.
+data is curated from DBAASP, it includes sequences only with 5-60 AA in length. The activity values of the peptides were converted to pMIC (-log10 MIC), where the unit of MIC is µM. This dataset was used to construct regression models for Escherichia coli and Staphylococcus aureus.
 * Dataset for Escherichia coli has a median MIC value of 13.49 µM (corresponding to a pMIC of −1.13): 4042 sequences. （/data/EC.csv)
   Train dataset for Escherichia coli: 3638 sequences. (/data/train-EC.csv); test dataset for Escherichia coli: 404 sequences. (/data/test-EC.csv)
 
