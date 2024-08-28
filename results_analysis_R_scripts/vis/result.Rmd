@@ -1,0 +1,124 @@
+---
+title: "result"
+author: "Jianxiu Cai"
+date: "2023-09-11"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(dplyr)
+library(ggplot2)
+```
+
+```{r}
+bert_ml <- read.csv("/home/jianxiu/Documents/iscb/EC/result/ec_machine_learning.csv")
+bert_ml_sum <- bert_ml %>% group_by(regressor, encoding) %>%
+  summarise(mean_mse = mean(mse),
+            std_mse = sd(mse),
+            mean_pcc = mean(pcc),
+            std_pcc = sd(pcc),
+            mean_ktc = mean(ktc),
+            std_ktc = sd(ktc),
+            .groups = 'drop') %>%
+  as.data.frame()
+write.csv(bert_ml_sum, "/home/jianxiu/Documents/iscb/EC/result/ec_machine_learning_sum.csv", row.names = FALSE)
+```
+
+```{r}
+sa_bert_ml <- read.csv("~/Documents/iscb/SA/result/sa_machine_learing.csv")
+sa_bert_ml_sum <- sa_bert_ml %>% group_by(regressor, encoding) %>%
+  summarise(mean_mse = mean(mse),
+            std_mse = sd(mse),
+            mean_pcc = mean(pcc),
+            std_pcc = sd(pcc),
+            mean_ktc = mean(ktc),
+            std_ktc = sd(ktc),
+            .groups = 'drop') %>%
+  as.data.frame()
+write.csv(sa_bert_ml_sum, "/home/jianxiu/Documents/iscb/SA/result/sa_machine_learning_sum.csv", row.names = FALSE)
+```
+
+
+```{r}
+ablation_study <- read.csv("~/Documents/iscb/vis/ablation_study.csv")
+ablation_study_sum <- ablation_study %>% group_by(species, models) %>%
+  summarise(mean_mse = mean(mse),
+            std_mse = sd(mse),
+            mean_pcc = mean(pcc),
+            std_pcc = sd(pcc),
+            mean_ktc = mean(ktc),
+            std_ktc = sd(ktc),
+            .groups = 'drop') %>%
+  as.data.frame()
+write.csv(ablation_study_sum, "/home/jianxiu/Documents/iscb/vis/ablation_study_sum.csv", row.names = FALSE)
+```
+
+
+```{r, options(warn=-1)}
+library(dplyr)
+sa_ml <- read.csv("C:/Users/janec/OneDrive - ipm.edu.mo/amp_reg_final/sa/result/ml_result_sa_all.csv")
+
+sa_finetune <- read.csv("C:/Users/janec/OneDrive - ipm.edu.mo/amp_reg_final/sa/result/best_result_SA_10.csv")
+```
+
+```{r}
+sa_ml_sum <- sa_ml %>% group_by(regressor, encoding) %>%
+  summarise(mean_mse = mean(mse),
+            std_mse = sd(mse),
+            mean_pcc = mean(pcc),
+            std_pcc = sd(pcc),
+            mean_r2 = mean(r2),
+            std_r2 = sd(r2),
+            .groups = 'drop') %>%
+  as.data.frame()
+write.csv(sa_ml_sum, "C:/Users/janec/OneDrive - ipm.edu.mo/amp_reg_final/sa/result/sa_ml_sum.csv", row.names = FALSE)
+
+# group_by(data) 
+sa_finetune_sum <- sa_finetune %>%
+  summarise(mean_mse = mean(best_mse_repeat),
+            std_mse = sd(best_mse_repeat),
+            mean_pcc = mean(best_mse_pcc),
+            std_pcc = sd(best_mse_pcc), 
+            mean_r2 = mean(best_mse_r2),
+            std_r2 = sd(best_mse_r2)) %>%
+  as.data.frame()
+write.csv(sa_finetune_sum, "C:/Users/janec/OneDrive - ipm.edu.mo/amp_reg_final/sa/result/sa_finetune_sum.csv", row.names = FALSE)
+
+```
+
+```{r, options(warn=-1)}
+library(dplyr)
+ec_ml <- read.csv("C:/Users/janec/OneDrive - ipm.edu.mo/amp_reg_final/ec/ml_result_all.csv")
+
+ec_finetune <- read.csv("C:/Users/janec/OneDrive - ipm.edu.mo/amp_reg_final/ec/result/finetune.csv")
+```
+
+```{r}
+ec_ml_sum <- ec_ml %>% group_by(regressor, encoding) %>%
+  summarise(mean_mse = mean(mse),
+            std_mse = sd(mse),
+            mean_pcc = mean(pcc),
+            std_pcc = sd(pcc),
+            mean_r2 = mean(r2),
+            std_r2 = sd(r2),
+            .groups = 'drop') %>%
+  as.data.frame()
+write.csv(sa_ml_sum, "C:/Users/janec/OneDrive - ipm.edu.mo/amp_reg_final/ec/result/ec_ml_sum.csv", row.names = FALSE)
+
+# group_by(data) 
+ec_finetune_sum <- ec_finetune %>%
+  summarise(mean_mse = mean(best_mse),
+            std_mse = sd(best_mse),
+            mean_pcc = mean(best_mse_pcc),
+            std_pcc = sd(best_mse_pcc),
+            mean_r2 = mean(best_mse_r2),
+            std_r2 = sd(best_mse_r2)) %>%
+  as.data.frame()
+write.csv(ec_finetune_sum, "C:/Users/janec/OneDrive - ipm.edu.mo/iscb/amp_reg_final/result/ec_finetune_sum.csv", row.names = FALSE)
+
+```
+
