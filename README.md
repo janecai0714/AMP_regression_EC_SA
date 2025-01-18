@@ -33,7 +33,7 @@ data is curated from DBAASP, it includes sequences only with 5-60 AA in length. 
 * in the /predict/predict.py, change the variables (fasta_path, csv_path) to your own filename, run /predict/predict.py to predict pMIC values for input sequences
 
 ### Google colab (recieve a fasta file and output a csv file)
-[Google colab](https://www.google.com](https://colab.research.google.com/drive/1dZ5SoEUxJYdCvAxu5Z_bGidnvUGbVTpw?usp=sharing)
+[Google colab](https://colab.research.google.com/drive/1dZ5SoEUxJYdCvAxu5Z_bGidnvUGbVTpw?usp=sharing)
 ## Acknowledgments
 
 Inspiration, code snippets, etc.
