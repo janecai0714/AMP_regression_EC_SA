@@ -159,7 +159,7 @@ if __name__ == "__main__":
             # parser.add_argument("--train_dir", type=str, default= "/home/jianxiu/Documents/EC/data/0/train-EC_ad.csv")
             # parser.add_argument("--test_dir", type=str, default="/home/jianxiu/Documents/EC/data/0/test-EC_ad.csv")
             parser.add_argument("--frozen_layers", type=int, default=0, metavar="NL",
-                                help="number of frozen layers(default: 10)")
+                                help="number of frozen layers(default: 0)")
             parser.add_argument("--lr", type=float, default=1e-5, metavar="LR", help="learning rate (default: 0.3e-5)")
             parser.add_argument("--weight_decay", type=float, default=3e-3, metavar="M",
                                 help="weight_decay (default: 0.01)")
